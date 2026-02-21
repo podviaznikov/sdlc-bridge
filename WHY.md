@@ -53,6 +53,7 @@ People forget to create tasks from the doc. Or update the doc when tasks change.
 - People forget to update statuses of docs and tickets.
 - A comment from Slack or Google Docs or Linear gets lost and never gets implemented.
 - Links in docs break. No one bothers to update docs when code changes or moves.
+- Status of the project is never clear — partially in Google Docs, partially in Linear, partially in code. No one knows what's up.
 
 ## New world
 
@@ -79,6 +80,7 @@ repo/
 - Docs must stay up to date because they are now operational. They become part of agent skills, commands, and configuration files.
 - Proper docs don't just prevent confusion — they enable entirely new capabilities that were not possible before. An agent can read a design doc and implement the feature. Read a security doc and audit the codebase. Read an architecture doc and know where to put new code. Each doc makes every other doc and every agent interaction more valuable. Knowledge compounds.
 - Agent can analyze the design doc, find actual dependencies and blockers, create proper tickets in Linear with the right order, and assign them to the right people or other agents — even across teams.
+- Agent can run a status check — read all docs and code, report what's done, what's in progress, what's blocked. And keep statuses up to date in Google Docs and Linear automatically.
 - Modern design and agentic coding sessions last for hours. Tons of feedback and nuanced discussion happens between agent and human. Most real-world human-to-human interactions on design docs or code reviews are not like that — they are usually short, 5-minute, low-depth time investments with ~1% of the value an agent can provide. The deep work now happens in the repo with agents. External tools serve the shallow consumption layer.
 
 Closed loop:
@@ -135,4 +137,4 @@ But for some time we need a short bridge to get those documents to the old syste
                           & read)
 ```
 
-sdlc-bridge does exactly that.
+sdlc-bridge does exactly that. Obviously this extends to Jira, Confluence, Notion, and any other system teams use today.
