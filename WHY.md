@@ -57,6 +57,8 @@ People forget to create tasks from the doc. Or update the doc when tasks change.
 
 ## New world
 
+The new world is agent-first, people-second. Agents are the primary audience for docs, code, and tasks. Human UI is a layer on top — not the starting point. See [Beads](https://github.com/steveyegge/beads) as an example of this philosophy in practice.
+
 Docs, reviews, and code live in the same system — the repo. Agents operate across all three.
 
 ```
