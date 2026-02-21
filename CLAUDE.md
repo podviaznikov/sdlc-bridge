@@ -25,7 +25,9 @@ Primary distribution is a **GitHub Action**. Users add a workflow YAML + secrets
 - Linear accepts markdown natively — much simpler.
 - Comments ordered by position in document (match `quotedText` against markdown source).
 - Orphaned comments (quoted text no longer in source) shown with warning, not deleted.
-- Action commits updated frontmatter + .comments.md back to the repo.
+- Action commits updated frontmatter + output files back to the repo.
+- Output both `.md` (human-readable) and `.json` (machine-readable) by default for comments and tasks.
+- Formats configurable globally in `.sdlc-bridge.yml` or per-file in frontmatter.
 - Tasks extracted from `- [ ]` checkboxes in the doc, auto-created as Linear issues.
 - Task completion synced bidirectionally: check in doc → close issue, close issue → check in doc.
 

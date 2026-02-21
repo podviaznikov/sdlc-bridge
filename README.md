@@ -114,17 +114,38 @@ publish:
 ---
 ```
 
-## Comments
+## Output formats
 
-Comments from Google Docs and Linear are pulled back and saved next to the source doc:
+By default, both human-readable (`.md`) and machine-readable (`.json`) files are generated:
 
 ```
 docs/design/
 ├── auth.md              ← source of truth
-├── auth.comments.md     ← auto-generated comments from all platforms
+├── auth.comments.md     ← human-readable comments
+├── auth.comments.json   ← machine-readable comments (for agents, CI/CD, dashboards)
+├── auth.tasks.md        ← human-readable task statuses
+├── auth.tasks.json      ← machine-readable task statuses
 ```
 
 Each comment includes the quoted text, author, timestamp, and a link back to the original comment.
+
+Override formats globally in `.sdlc-bridge.yml`:
+
+```yaml
+formats:
+  comments: [md, json]    # default: both
+  tasks: [md, json]       # default: both
+```
+
+Or per-file in frontmatter:
+
+```yaml
+---
+title: Auth System Design
+formats:
+  comments: [json]        # this doc only needs json
+---
+```
 
 ## License
 
