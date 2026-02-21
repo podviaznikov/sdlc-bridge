@@ -81,6 +81,7 @@ repo/
 - Proper docs don't just prevent confusion — they enable entirely new capabilities that were not possible before. An agent can read a design doc and implement the feature. Read a security doc and audit the codebase. Read an architecture doc and know where to put new code. Each doc makes every other doc and every agent interaction more valuable. Knowledge compounds.
 - Agent can analyze the design doc, find actual dependencies and blockers, create proper tickets in Linear with the right order, and assign them to the right people or other agents — even across teams.
 - Agent can run a status check — read all docs and code, report what's done, what's in progress, what's blocked. And keep statuses up to date in Google Docs and Linear automatically.
+- Templates live in the repo too. Design doc template, RFC template, ADR template — all version controlled, easy to evolve. An agent or a human can run a simple command to create a new doc from a template. No need to copy-paste from a Google Doc or find the "right" Notion template.
 - Modern design and agentic coding sessions last for hours. Tons of feedback and nuanced discussion happens between agent and human. Most real-world human-to-human interactions on design docs or code reviews are not like that — they are usually short, 5-minute, low-depth time investments with ~1% of the value an agent can provide. The deep work now happens in the repo with agents. External tools serve the shallow consumption layer.
 
 Closed loop:
