@@ -1,6 +1,6 @@
 # Why sdlc-bridge?
 
-The software development lifecycle has changed a lot in the past year and will continue to change.
+The software development lifecycle has changed. See [Agent-First SDLC](AGENT-FIRST-SDLC.md) for the full picture.
 
 ## Old world
 
@@ -57,75 +57,13 @@ People forget to create tasks from the doc. Or update the doc when tasks change.
 
 ## New world
 
-The new world is agent-first, people-second. Agents are the primary audience for docs, code, and tasks. Human UI is a layer on top — not the starting point. See [Beads](https://github.com/steveyegge/beads) as an example of this philosophy in practice.
-
-Docs, reviews, and code live in the same system — the repo. Agents operate across all three.
-
-```
-repo/
-├── docs/design/auth.md     ← agent writes spec
-├── src/auth/               ← agent implements spec
-└── tests/auth/             ← agent verifies spec
-```
-
-- Most code will be written by agents. This is already clear.
-- Most code should also be reviewed by agents.
-- Most design docs will be created, reviewed, and implemented by agents.
-- When docs live next to code, agents can programmatically check what was implemented and when.
-- Knowledge unified in one system compounds — because it's complete.
-- No easy way before to audit the status of a design doc. Now it can be a simple agent command — read the doc, check the implementation, report what's done and what's missing.
-- Or run a security audit against the doc based on actual implementation. And update all the statuses in Linear automatically.
-- Design doc becomes the single driver of the entire lifecycle. Agent reads the doc, creates tickets in Linear, assigns them to agents or people, implements the code, and updates the doc as work completes.
-- In the new world, docs are programmable. Because of AI and agents, docs can be executed, reasoned about, and trigger state updates in external systems.
-- Docs can be part of CI/CD and engineering practices. You can create tests against them, run audits, auto-fix broken links and outdated references.
-- Docs continue to accumulate and keep knowledge in one place — instead of rotting across disconnected systems.
-- Docs must stay up to date because they are now operational. They become part of agent skills, commands, and configuration files.
-- Proper docs don't just prevent confusion — they enable entirely new capabilities that were not possible before. An agent can read a design doc and implement the feature. Read a security doc and audit the codebase. Read an architecture doc and know where to put new code. Each doc makes every other doc and every agent interaction more valuable. Knowledge compounds.
-- Agent can analyze the design doc, find actual dependencies and blockers, create proper tickets in Linear with the right order, and assign them to the right people or other agents — even across teams.
-- Agent can run a status check — read all docs and code, report what's done, what's in progress, what's blocked. And keep statuses up to date in Google Docs and Linear automatically.
-- Templates live in the repo too. Design doc template, RFC template, ADR template — all version controlled, easy to evolve. An agent or a human can run a simple command to create a new doc from a template. No need to copy-paste from a Google Doc or find the "right" Notion template.
-- sdlc-bridge ships default commands like `/design-doc-new`, `/design-doc-status`, `/design-doc-audit`. Users can override them in their own repo with their own versions.
-- Frontmatter supports linking to external discussions — a Slack thread URL, a Linear discussion, a Google Doc. Even when discussions happen outside the repo, the doc tracks where they are. No more "where was that conversation?"
-- Modern design and agentic coding sessions last for hours. Tons of feedback and nuanced discussion happens between agent and human. Most real-world human-to-human interactions on design docs or code reviews are not like that — they are usually short, 5-minute, low-depth time investments with ~1% of the value an agent can provide. The deep work now happens in the repo with agents. External tools serve the shallow consumption layer.
-
-Closed loop:
-
-```
-         ┌──────────────────────────────┐
-         │            repo              │
-         │                              │
-         │  doc ←──→ code ←──→ tests    │
-         │   │         │         │      │
-         │   └────→ agent ←──────┘      │
-         │        verifies spec         │
-         │        updates status        │
-         │        syncs tasks           │
-         └──────────────────────────────┘
-```
-
-Doc drives the full lifecycle:
-
-```
-         design doc (repo)
-              │
-         agent reads spec
-              │
-    ┌─────────┼─────────┐
-    ▼         ▼         ▼
- ticket 1  ticket 2  ticket 3  ──→ auto-created in Linear
-    │         │         │
-  agent     agent    person    ──→ assigned
-    │         │         │
-  code      code      code     ──→ implemented
-    │         │         │
-    └─────────┼─────────┘
-              ▼
-     doc status updated
-```
+The [Agent-First SDLC](AGENT-FIRST-SDLC.md) changes all of this. Docs, code, and tasks live in the same system. Agents operate across all three. Knowledge compounds.
 
 ## The bridge (~1% of interactions)
 
 But for some time we need a short bridge to get those documents to the old systems, so some people can still opt in and read docs in their old interfaces, ask questions, and leave comments. The amount of those interactions will be ~1% very soon, but this is still needed.
+
+Similar to the IndieWeb [POSSE](https://indieweb.org/POSSE) model — Publish (on your) Own Site, Syndicate Elsewhere. Your repo is your site. Google Docs and Linear are the syndication targets.
 
 ```
          ┌──────────────────────────────┐

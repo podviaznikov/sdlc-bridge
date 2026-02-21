@@ -2,7 +2,7 @@
 
 Bridge your repo to the old world. Sync docs, tasks, and comments between your git repo and external systems.
 
-**[Why sdlc-bridge?](WHY.md)**
+**[Why sdlc-bridge?](WHY.md)** | **[Agent-First SDLC](AGENT-FIRST-SDLC.md)**
 
 Markdown is the source of truth. sdlc-bridge publishes to external platforms for review, creates and updates tasks, and pulls comments back into your repo.
 
