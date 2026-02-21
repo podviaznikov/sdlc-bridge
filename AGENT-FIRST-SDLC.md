@@ -1,6 +1,6 @@
 # Agent-First SDLC
 
-The new world is **agent-first, people-second**. Agents are the primary audience for docs, code, and tasks. Human UI is a layer on top — not the starting point. See [Beads](https://github.com/steveyegge/beads) as an example of this in practice.
+The new world is **agent-first, people-second**. Agents are the primary audience for docs, code, and tasks. Human UI is a layer on top — not the starting point. **The most leverage layer now is the agentic experience** for interaction with docs and knowledge — not the user experience. Optimize for that and offer temporary escape hatches via syncs to people who say they need it. See [Beads](https://github.com/steveyegge/beads) as an example of this in practice.
 
 Docs, reviews, and code live in the same system — the repo. Agents operate across all three.
 
@@ -21,11 +21,6 @@ repo/
 - Modern design and agentic coding sessions last for hours. Tons of feedback and nuanced discussion happens between agent and human. Most real-world human-to-human interactions on design docs or code reviews are not like that — they are usually short, 5-minute, low-depth time investments with ~1% of the value an agent can provide.
 - **Wisdom of a multi-hour work session with agents is way higher than wisdom of the crowd** for most typical problems.
 
-## Leverage
-
-- **The most leverage layer now is the agentic experience** for interaction with docs and knowledge — not the user experience. Optimize for that and offer temporary escape hatches via syncs to people who say they need it.
-- There is a misconception that docs for people and agents should be written in a different way. **That is not true.** Docs need to be clear, have little ambiguity, be up to date, link to proper resources for more context. Docs should be composable and linkable — like a system.
-
 ## Docs are programs
 
 - When docs live next to code, agents can programmatically check what was implemented and when.
@@ -36,6 +31,7 @@ repo/
 - Proper docs don't just prevent confusion — they enable entirely new capabilities that were not possible before. An agent can read a design doc and implement the feature. Read a security doc and audit the codebase. Read an architecture doc and know where to put new code. Each doc makes every other doc and every agent interaction more valuable. **Knowledge compounds.**
 - Docs continue to accumulate and keep knowledge in one place — instead of rotting across disconnected systems.
 - All non-code artifacts today are very inconsistent. One person writes detailed design docs and Linear tickets. Another keeps it short and vague. But when it's all in a repo, you can enforce shared templates, quality checks, and lints for docs. Apply engineering practices we had for code for decades — but now for docs, because **markdown files are executable programs**.
+- There is a misconception that docs for people and agents should be written in a different way. **That is not true.** Docs need to be clear, have little ambiguity, be up to date, link to proper resources for more context. Docs should be composable and linkable — like a system.
 
 ## Same session, same place
 
@@ -54,7 +50,7 @@ repo/
 
 ## Outcome over artifacts
 
-- **Outcome is judged by real deliverable artifacts** — products and real usage. Not by temporary artifacts like PRs or design docs. It doesn't matter how good your PR or docs are (or bad for that matter) if it had no outcome.
+- **Outcome is judged by real deliverable artifacts** — products and real usage. Not by temporary artifacts like PRs or design docs. A great PR or a polished design doc is not a delivery. If the product doesn't ship or no one uses it, the artifacts don't matter. Don't cargo cult process — PRs and docs serve the outcome, not the other way around.
 - Imagine implementing a review/post-mortem flow where you assign a date when you expect to get results and bring them in from real systems. Outcome-based. Not cargo culting.
 - We have been here before. Early in my career there were always people on the team who would spend hours nitpicking syntax in your code or blocking you for days from delivering value. Then we moved on from thinking that value is in how you named your variable in code — at least to the PR as a unit. Now we are moving all the way up. **The unit of work is the full deliverable including the usage of that deliverable**, not code.
 

@@ -51,10 +51,8 @@ People forget to create tasks from the doc. Or update the doc when tasks change.
 
 - No easy way to audit the status of a design doc against implementation.
 - No way to run a security audit against the doc based on actual code.
-- People forget to update statuses of docs and tickets.
 - A comment from Slack or Google Docs or Linear gets lost and never gets implemented.
 - Links in docs break. No one bothers to update docs when code changes or moves.
-- Status of the project is never clear — partially in Google Docs, partially in Linear, partially in code. No one knows what's up.
 
 ## New world
 
