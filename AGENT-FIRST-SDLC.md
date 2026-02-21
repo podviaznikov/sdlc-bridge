@@ -31,7 +31,7 @@ repo/
 - Proper docs don't just prevent confusion — they enable entirely new capabilities that were not possible before. An agent can read a design doc and implement the feature. Read a security doc and audit the codebase. Read an architecture doc and know where to put new code. Each doc makes every other doc and every agent interaction more valuable. **Knowledge compounds.**
 - Docs continue to accumulate and keep knowledge in one place — instead of rotting across disconnected systems.
 - All non-code artifacts today are very inconsistent. One person writes detailed design docs and Linear tickets. Another keeps it short and vague. But when it's all in a repo, you can enforce shared templates, quality checks, and lints for docs. Apply engineering practices we had for code for decades — but now for docs, because **markdown files are executable programs**.
-- There is a misconception that docs for people and agents should be written in a different way. **That is not true.** Docs need to be clear, have little ambiguity, be up to date, link to proper resources for more context. Docs should be composable and linkable — like a system.
+- There is a misconception that docs for people and agents should be written in a different way. **That is not true.** Docs need to be clear, have little ambiguity, be up to date, link to proper resources for more context. Docs should be composable and linkable — like a system. This is true regardless of who the consumer is.
 
 ## Same session, same place
 
