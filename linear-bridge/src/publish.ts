@@ -1,14 +1,11 @@
 import { createLinearClient } from "./auth.js";
+import { buildSourceHeader } from "../../core/src/header.js";
 import type { ParsedDoc, Config, PublishResult } from "../../core/src/types.js";
-
-const SOURCE_HEADER = (repoUrl: string, filePath: string) =>
-  `> 📄 **Source:** [${filePath}](${repoUrl}/blob/main/${filePath})\n> *This document is auto-published by sdlc-bridge. Edit the markdown source, not this document.*\n\n---\n\n`;
 
 export async function publishToLinear(doc: ParsedDoc, config: Config): Promise<PublishResult> {
   const client = createLinearClient(config.linearApiKey!);
   const existingDocId = doc.frontmatter.publish?.linear?.doc_id;
-  const repoUrl = getRepoUrl();
-  const header = SOURCE_HEADER(repoUrl, doc.filePath);
+  const header = buildSourceHeader(doc.frontmatter, doc.filePath, "markdown");
   const content = header + doc.content;
 
   if (existingDocId) {
@@ -47,8 +44,3 @@ async function resolveProjectId(client: ReturnType<typeof createLinearClient>, p
   return projects.nodes[0]?.id;
 }
 
-function getRepoUrl(): string {
-  const repo = process.env.GITHUB_REPOSITORY;
-  if (repo) return `https://github.com/${repo}`;
-  return "https://github.com";
-}

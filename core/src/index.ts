@@ -4,4 +4,5 @@ export { parseDoc } from "./parser.js";
 export { writeFrontmatter } from "./frontmatter.js";
 export { renderComments } from "./comments.js";
 export { renderTasks } from "./tasks.js";
+export { buildSourceHeader } from "./header.js";
 export type * from "./types.js";

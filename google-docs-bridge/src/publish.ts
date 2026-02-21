@@ -1,9 +1,7 @@
 import { createGoogleClients } from "./auth.js";
 import { markdownToDocsRequests } from "./mdast-to-docs.js";
+import { buildSourceHeader } from "../../core/src/header.js";
 import type { ParsedDoc, Config, PublishResult } from "../../core/src/types.js";
-
-const SOURCE_HEADER = (repoUrl: string, filePath: string) =>
-  `📄 Source: ${repoUrl}/blob/main/${filePath}\nThis document is auto-published by sdlc-bridge. Edit the markdown source, not this document.\n\n`;
 
 export async function publishToGoogleDocs(doc: ParsedDoc, config: Config): Promise<PublishResult> {
   const clients = createGoogleClients(config.googleCredentials!);
@@ -29,8 +27,7 @@ async function createDoc(
   const docId = createRes.data.documentId!;
 
   // Build content requests
-  const repoUrl = getRepoUrl();
-  const header = SOURCE_HEADER(repoUrl, doc.filePath);
+  const header = buildSourceHeader(doc.frontmatter, doc.filePath, "plain");
   const requests = markdownToDocsRequests(header + doc.content);
 
   if (requests.length > 0) {
@@ -79,8 +76,7 @@ async function updateDoc(
   }
 
   // Insert new content
-  const repoUrl = getRepoUrl();
-  const header = SOURCE_HEADER(repoUrl, doc.filePath);
+  const header = buildSourceHeader(doc.frontmatter, doc.filePath, "plain");
   const contentRequests = markdownToDocsRequests(header + doc.content);
   requests.push(...contentRequests);
 
@@ -95,8 +91,3 @@ async function updateDoc(
   return { docId, url };
 }
 
-function getRepoUrl(): string {
-  const repo = process.env.GITHUB_REPOSITORY;
-  if (repo) return `https://github.com/${repo}`;
-  return "https://github.com";
-}
