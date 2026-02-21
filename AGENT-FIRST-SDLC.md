@@ -47,7 +47,7 @@ repo/
 
 ## Open formats win
 
-- **Files win.** You can grep them. Way faster than any API or MCP or any remote call.
+- **Files win.** You can grep them, agent can grep them. Way faster than any API or MCP or any remote call.
 - Do not keep source of truth in closed systems and unclear formats like Google Docs. Use open formats. They are always future-proof. They can be changed and refactored in one go via agents.
 - Imagine refactoring or moving a thousand Google Docs — slower, harder, less reliable, hard to verify, cannot preview changes the way you can with files.
 - Files and git have **unified history**. Do not rely on external systems. They might have their own versioning or not have that at all, or have it not available via API, or have some weird format or lack of data.
@@ -56,7 +56,7 @@ repo/
 
 - **Outcome is judged by real deliverable artifacts** — products and real usage. Not by temporary artifacts like PRs or design docs. It doesn't matter how good your PR or docs are (or bad for that matter) if it had no outcome.
 - Imagine implementing a review/post-mortem flow where you assign a date when you expect to get results and bring them in from real systems. Outcome-based. Not cargo culting.
-- We have been here before. Early in my career there were always people on the team who would spend hours nitpicking syntax in your code or blocking you for days from delivering value. Then we moved on from thinking that value is in how you named your variable in code — at least to the PR as a unit. Now we are moving all the way up. **The unit of work is the full thing with the outcome**, not code.
+- We have been here before. Early in my career there were always people on the team who would spend hours nitpicking syntax in your code or blocking you for days from delivering value. Then we moved on from thinking that value is in how you named your variable in code — at least to the PR as a unit. Now we are moving all the way up. **The unit of work is the full deliverable including the usage of that deliverable**, not code.
 
 ## The current bridge flow is broken
 

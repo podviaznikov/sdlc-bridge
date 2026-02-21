@@ -38,13 +38,14 @@ People forget to create tasks from the doc. Or update the doc when tasks change.
 - No programmatic link between the design doc and the implementation.
 - No way to verify what was implemented and when.
 
-### Tasks drift
+### Tasks and statuses drift
 
 - Implementation plan and tasks in Linear often out of sync from design doc or code.
 - People forget to create tasks from the doc.
 - People forget to update the doc when tasks change.
 - People forget to link PRs to Linear tickets.
 - Someone manually creates tickets from the doc — half are missing or wrong.
+- Statuses drift too — a ticket says "in progress" when it's already done, or "backlog" when someone already shipped it. A doc says "draft" when it's approved and implemented.
 
 ### Things get lost
 
