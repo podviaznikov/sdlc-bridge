@@ -1,6 +1,10 @@
 # Agent-First SDLC
 
-The new world is **agent-first, people-second**. Agents are the primary audience for docs, code, and tasks. Human UI is a layer on top — not the starting point. **The most leverage layer now is the agentic experience** for interaction with docs and knowledge — not the user experience. Optimize for that and offer temporary escape hatches via syncs to people who say they need it. See [Beads](https://github.com/steveyegge/beads) as an example of this in practice.
+The new world is **agent-first, people-second**. Agents are the primary audience for docs, code, and tasks. Human UI is a layer on top — not the starting point.
+
+**The most leverage layer now is the agentic experience** for interaction with docs and knowledge — not the user experience. Optimize for that and offer temporary escape hatches via syncs to people who say they need it.
+
+See [Beads](https://github.com/steveyegge/beads) as an example of this in practice.
 
 Docs, reviews, and code live in the same system — the repo. Agents operate across all three.
 
@@ -61,8 +65,7 @@ Doc drives the full lifecycle:
 
 ## Docs are programs
 
-- When docs live next to code, agents can programmatically check what was implemented and when.
-- **Knowledge unified in one system compounds** — because it's complete.
+- When docs live next to code, agents can programmatically check what was implemented and when. **Knowledge unified in one system compounds** — because it's complete.
 - **Docs are programmable.** Because of AI and agents, docs can be executed, reasoned about, and trigger state updates in external systems.
 - Docs can be part of CI/CD and engineering practices. You can create tests against them, run audits, auto-fix broken links and outdated references.
 - Docs must stay up to date because they are now operational. They become part of agent skills, commands, and configuration files.
