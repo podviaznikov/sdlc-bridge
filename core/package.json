@@ -1,0 +1,13 @@
+{
+  "name": "@sdlc-bridge/core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "minimatch": "^10.2.2",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.0"
+  }
+}

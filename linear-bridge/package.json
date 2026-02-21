@@ -1,0 +1,10 @@
+{
+  "name": "@sdlc-bridge/linear-bridge",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@sdlc-bridge/core": "*",
+    "@linear/sdk": "^37.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "sdlc-bridge",
+  "version": "0.1.0",
+  "description": "Bridge your repo to the old world. Sync docs, tasks, and comments between your git repo and external systems.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.js --format=esm",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "deploy": "echo 'TODO: publish to GitHub Marketplace'"
+  },
+  "workspaces": [
+    "core",
+    "google-docs-bridge",
+    "linear-bridge"
+  ],
+  "author": "Anton Podviaznikov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/podviaznikov/sdlc-bridge.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

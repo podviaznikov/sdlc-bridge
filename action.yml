@@ -1,0 +1,31 @@
+name: 'sdlc-bridge'
+description: 'Bridge your repo to the old world. Sync docs, tasks, and comments between your git repo and external systems.'
+author: 'Anton Podviaznikov'
+
+inputs:
+  google-credentials:
+    description: 'Google service account credentials JSON'
+    required: false
+  linear-api-key:
+    description: 'Linear API key'
+    required: false
+  docs-path:
+    description: 'Glob pattern for markdown files to sync'
+    default: 'docs/**/*.md'
+  config-path:
+    description: 'Path to .sdlc-bridge.yml config file'
+    default: '.sdlc-bridge.yml'
+  sync-comments:
+    description: 'Pull comments back from external platforms'
+    default: 'true'
+  sync-tasks:
+    description: 'Sync tasks with Linear'
+    default: 'true'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'refresh-cw'
+  color: 'blue'
