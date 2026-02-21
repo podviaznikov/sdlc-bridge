@@ -25,7 +25,7 @@ Task statuses synced between doc and Linear
 
 ## Bridges
 
-- **gdocs-bridge** — publish markdown → Google Docs with full formatting and tabs. Pull comments back.
+- **google-docs-bridge** — publish markdown → Google Docs with full formatting and tabs. Pull comments back.
 - **linear-bridge** — publish markdown → Linear docs. Auto-create tasks from doc. Update task statuses. Pull comments back.
 
 Each bridge is independently usable or compose them together.
@@ -55,7 +55,7 @@ jobs:
 Or use individual bridges:
 
 ```yaml
-- uses: podviaznikov/sdlc-bridge/gdocs-bridge@v1
+- uses: podviaznikov/sdlc-bridge/google-docs-bridge@v1
   with:
     google-credentials: ${{ secrets.GOOGLE_SA_KEY }}
 
@@ -71,8 +71,13 @@ Per-file frontmatter:
 ```yaml
 ---
 title: Auth System Redesign
+discussions:
+  slack:
+    - https://slack.com/archives/C123/p456
+  linear:
+    - https://linear.app/team/issue/ENG-100
 publish:
-  gdocs:
+  google_docs:
     sharing: anyone-with-link
   linear:
     project: auth-redesign
@@ -91,14 +96,19 @@ After first sync, URLs and task IDs are written back:
 ```yaml
 ---
 title: Auth System Redesign
+discussions:
+  slack:
+    - https://slack.com/archives/C123/p456
+  linear:
+    - https://linear.app/team/issue/ENG-100
 publish:
-  gdocs:
-    docId: 1aBcDeFgHiJkLmNoPqRsTuVwXyZ
+  google_docs:
+    doc_id: 1aBcDeFgHiJkLmNoPqRsTuVwXyZ
     url: https://docs.google.com/document/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ/edit
     sharing: anyone-with-link
   linear:
     project: auth-redesign
-    docId: doc_abc123
+    doc_id: doc_abc123
     url: https://linear.app/team/document/auth-system-redesign-abc123
     tasks: true
     issues:

@@ -11,7 +11,7 @@ Markdown in the repo is the single source of truth. Publishing is one-way (repo 
 Modular bridge design — each bridge is a self-contained module:
 
 - **core/** — shared code: markdown parsing, frontmatter handling, comment formatting
-- **gdocs-bridge/** — Google Docs: publish formatted docs (via Docs API batchUpdate), tabs support, read comments (via Drive API comments.list)
+- **google-docs-bridge/** — Google Docs: publish formatted docs (via Docs API batchUpdate), tabs support, read comments (via Drive API comments.list)
 - **linear-bridge/** — Linear: publish docs (markdown native), create/update tasks, read inline comments (via GraphQL with quotedText)
 
 Primary distribution is a **GitHub Action**. Users add a workflow YAML + secrets.
@@ -20,7 +20,7 @@ Primary distribution is a **GitHub Action**. Users add a workflow YAML + secrets
 
 - No bidirectional content sync. Markdown is source of truth, always.
 - Each bridge is independently usable. No bridge depends on another.
-- Auth boundary = module boundary. gdocs-bridge needs Google credentials. linear-bridge needs Linear API key.
+- Auth boundary = module boundary. google-docs-bridge needs Google credentials. linear-bridge needs Linear API key.
 - Google Docs formatting requires translating mdast → batchUpdate requests (index math). This is the hardest part.
 - Linear accepts markdown natively — much simpler.
 - Comments ordered by position in document (match `quotedText` against markdown source).
@@ -46,7 +46,7 @@ Primary distribution is a **GitHub Action**. Users add a workflow YAML + secrets
 ```
 sdlc-bridge/
 ├── core/               ← markdown parsing, frontmatter, comment formatting
-├── gdocs-bridge/       ← Google Docs bridge
+├── google-docs-bridge/       ← Google Docs bridge
 ├── linear-bridge/      ← Linear bridge
 ├── action.yml          ← umbrella GitHub Action
 ├── WHY.md              ← motivation and philosophy
